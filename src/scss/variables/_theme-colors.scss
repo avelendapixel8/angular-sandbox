@@ -1,0 +1,58 @@
+////////////////////////////////////////////////////////////////////////////////
+// BASE COLORS
+////////////////////////////////////////////////////////////////////////////////
+
+
+$midgray:                        #474747;
+$softergray:                     #f6f6f6;
+$softgray:                       lighten($midgray, 60%);
+$lightgray:                      lighten($midgray, 40% );
+$darkgray:                       darken($midgray, 12% );
+$darkergray:                     darken($midgray, 20% );
+$black:                          #000;
+
+$green:                          #4fa11b!default;
+$white:                          #fff;
+$gold:                           #c5ac2f!default;
+$red:                            #ba202f;
+
+
+$dropshadows:                    rgba(0,0,0,0.4);
+
+$transparent:                    transparent;
+
+// BASE Colors
+
+$base-text-clr:                  $midgray;
+$base-body-clr:                  $white;
+
+//star ratings
+
+$filled-star-color:              $gold;
+$empty-star-color:               $gold;
+$star-size:                      17px;
+
+//specialOffer-color
+
+$specialOffer-color:             $green;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// THEME COLORS
+////////////////////////////////////////////////////////////////////////////////
+
+
+// $theme-primary-clr:             #c5ac2f !default; // Westgate color
+$theme-primary-clr:              #1e3161 !default; // Default color
+// $theme-secondary-clr:           #19212c ; // Westgate color
+$theme-secondary-clr:            #0094cd ; // Default color
+$theme-tertiary-clr:             $midgray;
+
+
+// Calendar Months
+
+$calendar-clr:                   $theme-primary-clr;
+$calendarText-clr:               $white;
+
+
+$sponsored-clr:                  $theme-primary-clr;

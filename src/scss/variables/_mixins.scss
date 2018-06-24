@@ -1,0 +1,399 @@
+// Hero Height
+$hero-height-xs: 250px;
+$hero-height-md: 350px;
+$hero-height-lg: 452px;
+
+// Hero Carousel Top Margin Offset
+$TopMarginOffset: 0px;
+
+//Alpha `Background` Color
+@mixin alpha-attribute($attribute, $color, $background) {
+    $percent: alpha($color) * 100%;
+    $opaque: opacify($color, 1);
+    $solid-color: mix($opaque, $background, $percent);
+    #{$attribute}: $solid-color;
+    #{$attribute}: $color;
+}
+
+//Box-Shadow Mixin
+@mixin box-shadow ($left, $top, $blur, $spread, $color, $inset: false) {
+    @if $inset {
+        -webkit-box-shadow: inset $left $top $blur $spread $color;
+        -moz-box-shadow: inset $left $top $blur $spread $color;
+        box-shadow: inset $left $top $blur $spread $color;
+    }
+    @else {
+        -webkit-box-shadow: $left $top $blur $spread $color;
+        -moz-box-shadow: $left $top $blur $spread $color;
+        box-shadow: $left $top $blur $spread $color;
+    }
+}
+
+// Hero Mixin
+@mixin hero {
+    position: relative;
+    padding-top: 8%;
+    padding-bottom: 8%;
+    @include box-shadow( 0, 0, 9px, $dropshadows, true);
+}
+
+@mixin main-hero {
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include box-shadow( 0, 0, 9px, $dropshadows, true);
+}
+
+// one color button mixin set default background-color & element state background-color
+@mixin oneColorBtn($bg) {
+    cursor: pointer;
+    border-radius: 0;
+    background-color: $bg;
+    transition: background-color 500ms ease;
+    &:hover,
+    &:active,
+    &:focus,
+    &:not([disabled]):not(.disabled).active,
+    &:not([disabled]):not(.disabled):active,
+    .show>&.dropdown-toggle {
+        background-color: darken($bg, 10%);
+        border-color: darken($bg, 10%);
+        box-shadow: 0 0 0 0.2rem rgba($bg, .5);
+    }
+}
+
+// two color button mixin set default background-color, element state text color, & background-color
+@mixin twoColorBtn($bgColor1, $textColor1, $bgColor2) {
+    cursor: pointer;
+    border-radius: 0;
+    background-color: $bgColor1;
+    &:hover,
+    &:focus,
+    &.active {
+        color: $textColor1;
+        background-color: $bgColor2;
+        svg {
+            fill: $textColor1;
+        }
+    }
+}
+
+//button mixin
+@mixin button-bg($bg) {
+    cursor: pointer;
+    border-radius: 0;
+    background-color: $bg;
+    &:hover,
+    &:active,
+    &:focus,
+    {
+        background-color: darken($bg, 10%);
+    }
+}
+
+@mixin bootstrapBtn ($bgColor1, $textColor1, $bgColor2) {
+    cursor: pointer;
+    padding: .55rem 1.5rem;
+    line-height: 1.125;
+    font-size: .9rem;
+    font-weight: normal;
+    color: $textColor1;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: $bgColor1;
+    border-radius: 0;
+    outline-color: transparent;
+    border: 0px solid transparent;
+    transition: all 0.3s ease;
+    &:hover,
+    &:active,
+    &:focus,
+    &:not([disabled]):not(.disabled).active,
+    &:not([disabled]):not(.disabled):active,
+    .show>&.dropdown-toggle {
+        color: $textColor1;
+        background-color: $bgColor2;
+        border-color: transparent;
+        box-shadow: 0 0 0 0.2rem rgba($bgColor2, .5);
+    }
+    &:disabled,
+    &.disabled {
+        color: $textColor1;
+        background-color: $bgColor1;
+        outline-color: transparent;
+        border: 0px solid transparent;
+        box-shadow: 0 0 0 0.2rem transparent;
+        cursor: not-allowed;
+    }
+}
+
+@mixin bootstrapIconBtn ($bgColor1, $textColor1, $bgColor2, $textColor2) {
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 300;
+    color: $textColor1;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: $bgColor1;
+    border-radius: 0;
+    outline-color: transparent; // outline: 0px auto -webkit-focus-ring-color!important;
+    border: 0px solid transparent;
+    transition: all 0.3s ease 0s;
+    &.active,
+    &.focus,
+    &:active,
+    &:focus,
+    &:hover,
+    .open>.dropdown-toggle.btn-default {
+        color: $textColor2;
+        background-color: $bgColor2;
+        border-color: transparent;
+        outline-color: transparent;
+        svg {
+            fill: $textColor2;
+        }
+    }
+    &.active.focus,
+    &.active:focus,
+    &.active:hover,
+    &:active.focus,
+    &:active:focus,
+    &:active:hover,
+    .open>.dropdown-toggle.btn-default:focus,
+    .open>.dropdown-toggle.btn-default:hover {
+        color: $textColor2;
+        background-color: $bgColor2;
+        svg {
+            fill: $textColor2;
+        }
+    }
+}
+
+// Search button background border-radius border
+@mixin search-button-bg-br($bg, $br) {
+    display: inline-block;
+    background-color: $bg;
+    border: 1px solid darken($bg, 5%);
+    border-radius: $br;
+    width: 60px;
+    height: 33px;
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: darken($bg, 5%);
+        border: 1px solid $bg;
+    }
+}
+
+// Generic Transition
+@mixin transition($transition...) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -ms-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+// generic transform
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+// rotate
+@mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+
+// translate
+@mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+// skew
+@mixin skew ($x, $y) {
+    @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+//transform origin
+@mixin transform-origin ($origin) {
+    moz-transform-origin: $origin;
+    -o-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    -webkit-transform-origin: $origin;
+    transform-origin: $origin;
+}
+
+//Vertical gradient
+@mixin linearGradient($top, $bottom) {
+    background: $top;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, $top 0%, $bottom 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $top), color-stop(100%, $bottom));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, $top 0%, $bottom 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, $top 0%, $bottom 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, $top 0%, $bottom 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, $top 0%, $bottom 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
+    /* IE6-9 */
+}
+
+//Horizontal gradient
+@mixin linearHorizontalGradient($left, $right) {
+    background: $left;
+    background: -moz-linear-gradient(left, $left 0%, $right 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, $left 0%, $right 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, $left 0%, $right 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=1);
+    /* IE6-9 */
+}
+
+//vertical center
+@mixin center($verticalRight: true, $verticalLeft: true) {
+    position: absolute;
+    @if ($verticalRight and $verticalLeft) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    @else if ($verticalRight) {
+        right: 0%;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+    @else if ($verticalLeft) {
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+}
+
+@mixin centerUndo {
+    position: relative;
+    right: auto;
+    left: auto;
+    top: auto;
+    transform: translate(0, 0)
+}
+
+// Mixin for CSS3 Columns set qty, width, and gap
+@mixin cssColumns($colQty, $colWidth, $colGap) {
+    -webkit-columns: $colQty $colWidth;
+    -moz-columns: $colQty $colWidth;
+    columns: $colQty $colWidth;
+    -webkit-column-gap: $colGap;
+    -moz-column-gap: $colGap;
+    column-gap: $colGap;
+}
+
+// Mixin for circle badge element with inner border
+// set element Size, Color
+// Mixin for circle badge element with inner border
+// set element Size, BG Color & Text Color
+@mixin circleBadge ($badgeSz, $badgeClr, $badgeTextClr) {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; //circle element shape
+    height: $badgeSz;
+    width: $badgeSz;
+    border-radius: 50%;
+    border-style: none; //background color default
+    background-color: $badgeClr; //text color default
+    color: $badgeTextClr;
+    font-size: 0.9em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+// mixin for multiline
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white) {
+    overflow: hidden;
+    position: relative;
+    line-height: $lineHeight;
+    max-height: $lineHeight * $lineCount;
+    text-align: justify;
+    margin-right: -1em;
+    padding-right: 1em;
+    &:before {
+        content: '...';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 1em;
+        height: 1em;
+        margin-top: 0.2em;
+        background: $bgColor;
+    }
+}
+
+// Mixin for Detail listing min-height
+@mixin detailsHeight {
+    min-height: 170px;
+}
+
+// Absolute Borders
+@mixin leftBorderAbsolute ($clr) {
+    &:before {
+        content: '';
+        display: inline;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-left: 1px solid $clr;
+        margin-left: 2px;
+    }
+}
+
+@mixin rightBorderAbsolute ($clr) {
+    &:after {
+        content: '';
+        display: inline;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        border-left: 1px solid $clr;
+        margin-right: 2px;
+    }
+}
+
+// Trim text in title
+@mixin line-clamp($numLines: 1, $lineHeight: 1.412) {
+    overflow: hidden;
+    text-overflow: -o-ellipsis-lastline;
+    text-overflow: ellipsis;
+    display: block;
+    /* autoprefixer: off */
+    display: -webkit-box;
+    -webkit-line-clamp: $numLines;
+    -webkit-box-orient: vertical;
+    max-height: $numLines * $lineHeight + unquote('em');
+}
+
+@mixin filterBg {
+    background-color: rgba($midgray, .7);
+}

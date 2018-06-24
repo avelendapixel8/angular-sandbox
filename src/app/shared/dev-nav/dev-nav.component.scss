@@ -1,0 +1,32 @@
+@import '~scss/variables/_variables.scss';
+
+.dev-nav{
+  overflow: hidden;
+  display: none;
+  background-color: $midgray;
+  color: $white;
+  font-size: 11px;
+  border-left: 8px solid hotpink;
+  padding: 0 15px;
+  @media screen and (min-width: $screen-md) {
+    display: block
+  }
+  &__title{
+
+  }
+
+  &__link{
+    color:$white;
+    border-bottom: 2px solid transparent;
+    padding: 5px 0;
+    margin: 5px 15px;
+    &:first-child{
+      margin-left: 0;
+    }
+    &:hover, &:active, &.active{
+      color: $white;
+      border-bottom: 2px solid hotpink;
+    }
+  }
+
+}

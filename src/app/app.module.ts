@@ -16,6 +16,7 @@ import { PageTwoComponent } from './pages/page-two/page-two.component';
 import { PageThreeComponent } from './pages/page-three/page-three.component';
 import { PageFiveComponent } from './pages/page-five/page-five.component';
 import { PageFourComponent } from './pages/page-four/page-four.component';
+import { ReadMoreComponent } from './shared/read-more/read-more.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { PageFourComponent } from './pages/page-four/page-four.component';
     PageThreeComponent,
     PageFiveComponent,
     PageFourComponent,
+    ReadMoreComponent,
   ],
   imports: [
     BrowserModule,

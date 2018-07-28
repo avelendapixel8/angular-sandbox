@@ -1,0 +1,60 @@
+@import '~scss/variables/_variables.scss';
+
+.earn-object{
+  // max-width: 100%;
+  // font-size: 17px; //font-size added at the component level
+
+  &__title{
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    color: $theme-secondary-clr;
+    margin-bottom: .25em;
+    span{
+      margin: 0 10px;
+    }
+    &:after,
+    &:before{
+      display: inline-block;
+      content: '';
+      width: 100%;
+      height: 1px;
+      background: $theme-secondary-clr;
+    }
+  }
+  &__row{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    line-height: 1;
+    font-weight: 700;
+    padding: 0 5%;
+  }
+  &__value{
+    // flex: 100%;
+    font-size: 2.75em;
+    line-height: .75;
+  }
+  &__labels{
+    flex: 100%;
+    margin-left: .4em;
+    text-align: left;
+    line-height: .9;
+    .currency-label{
+      font-size: .9em;
+      text-transform: uppercase;
+      margin-bottom: .5em;
+    }
+    .sub-label.not-stacked{
+      font-size: .75em;
+    }
+    &.stacked{
+        margin-top: .375em;
+        font-size: .9em;
+        font-weight: 700;
+        text-align: center;
+    }
+  }
+}

@@ -1,3 +1,13 @@
-<p>
-  earn-object works!
-</p>
+<div class="earn-object" [ngStyle]="{ 'font-size' : earnFontSize + 'px' }">
+    <div class="earn-object__title"><span>{{ earnTitle }}</span></div>
+    <div class="earn-object__row">
+      <div class="earn-object__value">{{ earnValue }}</div>
+      <div class="earn-object__labels">
+        <div class="currency-label">{{ purchaseType }}</div>
+        <div *ngIf="!isStacked" class="sub-label not-stacked">{{ perStayLabel }}</div>
+      </div>
+		</div>
+		<div class="earn-object__labels stacked" *ngIf="isStacked">
+			<span class="sub-label">{{ perStayLabel }}</span>
+		</div>
+  </div>

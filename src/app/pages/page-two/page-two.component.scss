@@ -1,0 +1,14 @@
+@import '~scss/variables/_variables.scss';
+
+
+.grid-masonry{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 20px;
+    background-color: $gray-700;
+    &__card{
+        background: $theme-primary-clr;
+    }
+
+}

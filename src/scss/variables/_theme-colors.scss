@@ -3,13 +3,21 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-$midgray:                        #474747;
-$softergray:                     #f6f6f6;
-$softgray:                       lighten($midgray, 60%);
-$lightgray:                      lighten($midgray, 40% );
-$darkgray:                       darken($midgray, 12% );
-$darkergray:                     darken($midgray, 20% );
-$black:                          #000;
+//
+// Color system
+//
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
 
 $green:                          #4fa11b!default;
 $white:                          #fff;
@@ -23,7 +31,7 @@ $transparent:                    transparent;
 
 // BASE Colors
 
-$base-text-clr:                  $midgray;
+$base-text-clr:                  $gray-700;
 $base-body-clr:                  $white;
 
 //star ratings
@@ -41,12 +49,11 @@ $specialOffer-color:             $green;
 // THEME COLORS
 ////////////////////////////////////////////////////////////////////////////////
 
-
 // $theme-primary-clr:             #c5ac2f !default; // Westgate color
-$theme-primary-clr:              #1e3161 !default; // Default color
+$theme-primary-clr:              #4d4347 !default; // Default color
 // $theme-secondary-clr:           #19212c ; // Westgate color
 $theme-secondary-clr:            #0094cd ; // Default color
-$theme-tertiary-clr:             $midgray;
+$theme-tertiary-clr:             $gray-700;
 
 
 // Calendar Months

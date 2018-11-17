@@ -266,32 +266,6 @@ $TopMarginOffset: 0px;
     /* IE6-9 */
 }
 
-//vertical center
-@mixin center($verticalRight: true, $verticalLeft: true) {
-    position: absolute;
-    @if ($verticalRight and $verticalLeft) {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    @else if ($verticalRight) {
-        right: 0%;
-        top: 50%;
-        transform: translate(0, -50%);
-    }
-    @else if ($verticalLeft) {
-        top: 50%;
-        transform: translate(0, -50%);
-    }
-}
-
-@mixin centerUndo {
-    position: relative;
-    right: auto;
-    left: auto;
-    top: auto;
-    transform: translate(0, 0)
-}
 
 // Mixin for CSS3 Columns set qty, width, and gap
 @mixin cssColumns($colQty, $colWidth, $colGap) {
@@ -323,63 +297,6 @@ $TopMarginOffset: 0px;
     text-transform: uppercase;
 }
 
-// mixin for multiline
-@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white) {
-    overflow: hidden;
-    position: relative;
-    line-height: $lineHeight;
-    max-height: $lineHeight * $lineCount;
-    text-align: justify;
-    margin-right: -1em;
-    padding-right: 1em;
-    &:before {
-        content: '...';
-        position: absolute;
-        right: 0;
-        bottom: 0;
-    }
-    &:after {
-        content: '';
-        position: absolute;
-        right: 0;
-        width: 1em;
-        height: 1em;
-        margin-top: 0.2em;
-        background: $bgColor;
-    }
-}
-
-// Mixin for Detail listing min-height
-@mixin detailsHeight {
-    min-height: 170px;
-}
-
-// Absolute Borders
-@mixin leftBorderAbsolute ($clr) {
-    &:before {
-        content: '';
-        display: inline;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        border-left: 1px solid $clr;
-        margin-left: 2px;
-    }
-}
-
-@mixin rightBorderAbsolute ($clr) {
-    &:after {
-        content: '';
-        display: inline;
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        border-left: 1px solid $clr;
-        margin-right: 2px;
-    }
-}
 
 // Trim text in title
 @mixin line-clamp($numLines: 1, $lineHeight: 1.412) {
@@ -392,8 +309,4 @@ $TopMarginOffset: 0px;
     -webkit-line-clamp: $numLines;
     -webkit-box-orient: vertical;
     max-height: $numLines * $lineHeight + unquote('em');
-}
-
-@mixin filterBg {
-    background-color: rgba($midgray, .7);
 }

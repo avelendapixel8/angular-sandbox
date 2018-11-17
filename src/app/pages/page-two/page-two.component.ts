@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { IMAGEGALLERY } from './mock-gallery';
 
 @Component({
   selector: 'page-two',
@@ -7,6 +8,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class PageTwoComponent implements OnInit {
+
+  galleryImages = IMAGEGALLERY;
 
   constructor() { }
 

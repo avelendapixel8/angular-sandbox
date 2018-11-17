@@ -3,7 +3,7 @@
 .dev-nav{
   overflow: hidden;
   display: none;
-  background-color: $midgray;
+  background-color: $gray-800;
   color: $white;
   font-size: 11px;
   border-left: 8px solid hotpink;
@@ -13,6 +13,11 @@
   }
   &__title{
 
+  }
+  .nav{
+    display:flex;
+    list-style: none;
+    padding: 0;
   }
 
   &__link{
@@ -24,6 +29,7 @@
       margin-left: 0;
     }
     &:hover, &:active, &.active{
+      text-decoration: none;
       color: $white;
       border-bottom: 2px solid hotpink;
     }

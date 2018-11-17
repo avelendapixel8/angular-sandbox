@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   constructor(private router: Router, private titleService: Title) {}
 
   ngOnInit() {
-    this.titleService.setTitle('Angaular Sandbox');
+    this.titleService.setTitle('Angular Sandbox');
   }
 
   title = 'app';

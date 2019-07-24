@@ -2,7 +2,7 @@
   <h2>{{title}}</h2>
   <div class="masonry-grid">
     <div class="masonry-grid__item" *ngFor="let imageGallery of galleryImages ">
-      <div [attr.id]="'imageGallery' + imageGallery.id" class="masonry-card" (load)="resizeElementById('element')" >
+      <div [attr.id]="'imageGallery--' + imageGallery.id" class="masonry-card" (load)="resizeElementById('element')" >
         <img [src]="imageGallery.imageUrl" alt="">
         <div class="masonry-card__info">
           <h5>{{ 'ID:&nbsp;' + imageGallery.id }} {{ 'Name:&nbsp;' + imageGallery.name }} </h5>

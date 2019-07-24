@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, AfterViewChecked, HostListener } from '@angular/core';
 import { IMAGEGALLERY } from './mock-gallery';
 
 @Component({
@@ -21,13 +21,13 @@ export class PageTwoComponent implements OnInit, AfterViewChecked {
     var rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
     var rowSpan = Math.ceil((item.querySelector('.masonry-card').getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));
     item.style.gridRowEnd = "span "+ rowSpan;
-    console.log(grid)
   }
 
   ngAfterViewChecked() {
     this.resizeAllGridItems();
   }
 
+  @HostListener ('window:resize', ['$event'])
   onResize(event) {
     this.resizeAllGridItems();
   }
@@ -38,6 +38,7 @@ export class PageTwoComponent implements OnInit, AfterViewChecked {
       this.resizeGridItem(allItems[x]);
     }
   }
+
   ngOnInit() {
   }
 

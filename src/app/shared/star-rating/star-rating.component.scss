@@ -1,54 +1,79 @@
 @import '~scss/variables/_variables.scss';
 
-// Ratings CSS Stars
-.ratings {
-    //star ratings
-    width: 6*$star-size;
-    height: $star-size;
-    display: inline-block;
-    position: relative;
-    &:before,
-    &:after {
-      display: inline-block;
-      font-family: $font-awesome, ;
-      font-style: normal;
-      font-weight: normal;
-      font-size: $star-size;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    &:before {
-      color: $empty-star-color;
-      content: "\f006\ \f006\ \f006\ \f006\ \f006";
-    }
-    &:after {
-      color: $filled-star-color;
-      content: "\f005\ \f005\ \f005\ \f005\ \f005";
-      overflow: hidden;
-    }
-    &.one:after {
-      content: "\f005";
-    }
-    &.onehalf:after {
-      content: "\f005\ \f089";
-    }
-    &.two:after {
-      content: "\f005\ \f005";
-    }
-    &.twohalf:after {
-      content: "\f005\ \f005\ \f089";
-    }
-    &.three:after {
-      content: "\f005\ \f005\ \f005";
-    }
-    &.threehalf:after {
-      content: "\f005\ \f005\ \f005\ \f089";
-    }
-    &.four:after {
-      content: "\f005\ \f005\ \f005\ \f005";
-    }
-    &.fourhalf:after {
-      content: "\f005\ \f005\ \f005\ \f005\ \f089";
-    }
+.star-rating{
+  position: relative;
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 1.125rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  &__top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    display: block;
+    padding: 0;
+    color: $theme-secondary-clr;
   }
+  &__bottom{
+    padding: 0;
+    display: block;
+    z-index: 0;
+  }
+}
+
+// // Ratings CSS Stars
+// .ratings {
+//     //star ratings
+//     width: 6*$star-size;
+//     height: $star-size;
+//     display: inline-block;
+//     position: relative;
+//     &:before,
+//     &:after {
+//       display: inline-block;
+//       font-family: $font-awesome, ;
+//       font-style: normal;
+//       font-weight: normal;
+//       font-size: $star-size;
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//     }
+//     &:before {
+//       color: $empty-star-color;
+//       content: "\f006\ \f006\ \f006\ \f006\ \f006";
+//     }
+//     &:after {
+//       color: $filled-star-color;
+//       content: "\f005\ \f005\ \f005\ \f005\ \f005";
+//       overflow: hidden;
+//     }
+//     &.one:after {
+//       content: "\f005";
+//     }
+//     &.onehalf:after {
+//       content: "\f005\ \f089";
+//     }
+//     &.two:after {
+//       content: "\f005\ \f005";
+//     }
+//     &.twohalf:after {
+//       content: "\f005\ \f005\ \f089";
+//     }
+//     &.three:after {
+//       content: "\f005\ \f005\ \f005";
+//     }
+//     &.threehalf:after {
+//       content: "\f005\ \f005\ \f005\ \f089";
+//     }
+//     &.four:after {
+//       content: "\f005\ \f005\ \f005\ \f005";
+//     }
+//     &.fourhalf:after {
+//       content: "\f005\ \f005\ \f005\ \f005\ \f089";
+//     }
+//   }

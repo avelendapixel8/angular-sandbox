@@ -9,6 +9,8 @@ import { EarnObjectComponent } from '../shared/earn-object/earn-object.component
 })
 export class HomeComponent implements OnInit {
 
+  name = 'Angular Niknacks';
+
   constructor() { }
 
   ngOnInit() {

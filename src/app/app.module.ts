@@ -43,7 +43,7 @@ import { WeatherStationComponent } from './shared/weather-station/weather-statio
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    NgbModule.forRoot(),
+    NgbModule,
 
   ],
   providers: [],

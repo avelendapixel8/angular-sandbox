@@ -1,11 +1,5 @@
-<!-- <span [ngClass]="{
-  'one' : rating === 'one',
-  'onehalf' : rating === 'onehalf',
-  'two' : rating === 'two',
-  'twohalf' : rating === 'twohalf',
-  'three' : rating === 'three',
-  'threehalf' : rating === 'threehalf',
-  'four' : rating === 'four',
-  'fourhalf' : rating === 'fourhalf',
-  'five' : rating === 'five'
-}" class="ratings four"></span> -->
+<div class="star-rating">
+  <div class="star-rating__top" [ngStyle]="{'width': getRating(rating)}">★★★★★
+  </div>
+  <div class="star-rating__bottom">★★★★★</div>
+</div>

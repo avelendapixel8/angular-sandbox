@@ -21,6 +21,7 @@ import { PageFourComponent } from './pages/page-four/page-four.component';
 import { ReadMoreComponent } from './shared/read-more/read-more.component';
 import { StarRatingComponent} from './shared/star-rating/star-rating.component';
 import { WeatherStationComponent } from './shared/weather-station/weather-station.component';
+import { AccordionComponent } from './shared/accordion/accordion.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { WeatherStationComponent } from './shared/weather-station/weather-statio
     ReadMoreComponent,
     StarRatingComponent,
     WeatherStationComponent,
+    AccordionComponent,
   ],
   imports: [
     BrowserModule,

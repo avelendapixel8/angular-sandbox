@@ -1,0 +1,20 @@
+<div class="accordion" [ngClass]="isOpen ? 'open' : 'closed'">
+  <div class="accordion-tab" (click)="toggleAccordion()" [ngClass]="isOpen ? 'open' : 'closed'">
+    <span class="accordion-tab__title">
+      {{ title }}
+    </span>
+    <span class="accordion-tab__chevron-right">
+        <svg width="24px" height="24px" viewBox="6 8.58 12 7.42" [@rotateDown]="isOpen ? 'up' : 'down'" [ngClass]="isOpen ? 'open' : 'closed'">
+            <path d="M7.41,8.58L12,13.17l4.59-4.59L18,10l-6,6l-6-6L7.41,8.58z" />
+    
+          </svg>
+    </span>
+  </div>
+  
+  <div class="accordion-panel" [@openClose]="isOpen ? 'open' : 'closed'">
+    <div class="accordion-panel__inner">
+      <ng-content ></ng-content>
+    </div>
+
+  </div>
+</div>

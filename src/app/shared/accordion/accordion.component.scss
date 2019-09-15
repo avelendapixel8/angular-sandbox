@@ -1,0 +1,84 @@
+@import '~scss/variables/_variables.scss';
+
+.accordion {
+  position: relative;
+}
+
+.accordion-tab {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: #eeeeee;
+    padding: .5em;
+    line-height: 1;
+    border: 1px solid #e4e4e4;
+    
+    &:after{
+      display: block;
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      left:0px;
+      width: 0;
+      content: '';
+      height: 2px;
+      background-color: transparent;
+      transition: 300ms width ease, 400ms opacity ease;
+    }
+
+    &.open{
+      &:after{
+        width: 100%;
+        opacity: 1;
+        background-color: $theme-secondary-clr;
+      }
+      // border-bottom: 2px solid $theme-secondary-clr;
+    }
+
+  
+  &__indicator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #9c9c9c;
+    font-size: 1.25em;
+    color: #fff;
+    border-radius: 25px
+  }
+
+  &__title {
+    font-size: 1.5em;
+    font-weight: 200;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  &__chevron-right{
+    margin-left: auto;
+    svg{
+      fill: #747373;
+
+      &.open{
+        fill: $theme-secondary-clr;
+      }
+
+    }
+  }
+
+}
+
+.accordion-panel{
+  background-color: #fdfbfb;
+  line-height: 1.5;
+  overflow: hidden;
+
+  &__inner{
+    border-right: 1px solid #e4e4e4;
+    border-left: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    padding: 15px
+  }
+}

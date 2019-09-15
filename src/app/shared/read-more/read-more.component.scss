@@ -1,0 +1,12 @@
+@import '~scss/variables/_variables.scss';
+
+.read-more{
+  line-height: 1.2;
+  &__inner{
+    // overflow: hidden;
+    // transition: 300ms opacity ease-in-out
+  }
+  &__button{
+    color: $theme-secondary-clr;
+  }
+}

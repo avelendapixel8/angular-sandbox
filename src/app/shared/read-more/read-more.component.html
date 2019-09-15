@@ -1,2 +1,4 @@
-<div class="read-more" [innerHtml]="currentText"></div>
-<a [class.hidden]="hideToggle" (click)="toggleView()" class="read-more">Read {{isCollapsed? 'more +':'less -'}}</a>
+<div class="read-more">
+  <div class="read-more__inner" [class.collapsed]="isCollapsed" [@openClose]="isCollapsed ? 'in' : 'out'" [innerHtml]="currentText"></div>
+  <a (click)="toggleView()" href="javascript:;" class="read-more__button">Read {{isCollapsed? 'more +':'less -'}}</a>
+</div>
